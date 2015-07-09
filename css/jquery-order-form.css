@@ -1,0 +1,44 @@
+.jof .ui-slider {margin-bottom: 0.6em;}
+.jof .ui-slider a {outline: 0;} /* fix for box-shadow glitch in safari */
+.jof .staticPrice {
+	color: #a00;
+}
+::-moz-selection{ background: #2391FF; color:#fff; text-shadow: none; }
+::selection { background:#2391FF; color:#fff; text-shadow: none; }
+a:link { -webkit-tap-highlight-color: #2391FF; }
+
+.option li {
+	list-style-type: none;
+}
+
+textarea {
+	-webkit-resize: vertical;
+	resize: vertical;
+}
+
+.o-radio label,
+.o-checkbox label,
+.o-radio input,
+.o-checkbox input {
+	float: left;
+	margin-right: 5px;
+	margin-left: 1px;
+}
+
+.o-radio ul,
+.o-checkbox ul {
+	overflow: hidden;
+	margin-left: 15px;
+}
+
+.o-radio li,
+.o-checkbox li {
+	margin-right: 20px;
+	overflow: hidden;
+}
+
+.o-radio.float li,
+.o-checkbox.float li {
+	float: left;
+}
+

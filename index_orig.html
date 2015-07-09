@@ -1,0 +1,299 @@
+<!doctype html>
+<!--[if lt IE 7]> <html lang="en-us" class="no-js ie6"> <![endif]-->
+<!--[if IE 7]>    <html lang="en-us" class="no-js ie7"> <![endif]-->
+<!--[if IE 8]>    <html lang="en-us" class="no-js ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-us" class="no-js"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Form Title</title>
+<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/jquery-price-calculator-pro.css"/>
+<link rel="stylesheet" type="text/css" href="css/jquery-order-form.css"/>
+<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/themes/ui-lightness/jquery-ui.css"/>
+<link rel="stylesheet" type="text/css" href="lib/ui-spinner/ui.spinner.css"/>
+
+<body>
+
+<div id="main">
+<h1>THIS FILE IS USED FOR DEVELOPMENT ONLY</h1>
+<h3>Form Title</h3>
+<form id="jquery-order-form" class="jof form-horizontal" action="submit.php" method="post" enctype="multipart/form-data">
+
+<div class="option">
+<div class="well">
+<h4>Title</h4>
+<p>The description goes here...</p>
+<!--<fieldset>-->
+
+<div class="sub-option o-1 o-radio" data-type="radio">
+<div class="well">
+<p><strong>Radio Buttons: </strong></p>
+<ul>
+<li>
+<input type="radio" data-cost="1" value="One" name="f_1"/>
+<label for="f_1"> One</label></li>
+<li>
+<input type="radio" data-cost="2" value="Two" name="f_1"/>
+<label for="f_1"> Two</label></li>
+<li>
+<input type="radio" data-cost="3" value="Three" name="f_1"/>
+<label for="f_1"> Three</label></li>
+</ul>
+
+</div>
+</div>
+
+
+<div class="sub-option o-2 o-checkbox" data-type="checkbox">
+<div class="well">
+<p><strong>Checkboxes: </strong></p>
+<ul>
+<li>
+<input type="checkbox" data-cost="4" value="Four" name="f_2[]"/>
+<label for="f_2[]"> Four</label></li>
+<li>
+<input type="checkbox" data-cost="5" value="Five" name="f_2[]"/>
+<label for="f_2[]"> Five</label></li>
+<li>
+<input type="checkbox" data-cost="6" value="Six" name="f_2[]"/>
+<label for="f_2[]"> Six</label></li>
+</ul>
+
+</div>
+</div>
+
+
+<div class="sub-option o-3 o-slider" data-type="slider">
+<div class="well">
+<p><strong>Slider: </strong></p>
+<input class="i-slider" type="number" id="f_3" name="f_3" data-slider="true" value="3" min="0" max="10" step="1" data-cost="2"/><span class="staticPrice"><span class="hypen"> - </span>$2 AUD per unit</span>
+</div>
+</div>
+
+
+<div class="sub-option o-4 o-file" data-type="file">
+<div class="well">
+<p><strong>File: </strong></p>
+<input name="f_4" id="f_4" type="file" />
+</div>
+</div>
+
+<!--</fieldset>-->
+<label><strong>Quantity: </strong>
+<select name="q_1" id="q_1" data-quantity="f_1,f_2[],f_3,f_4">
+    <option value="1">Normal</option>
+    <option value="1.2">20% more</option>
+    <option value="1.5">50% more</option>
+</select>
+<!----<input type="number" name="q_1" id="q_1" value="2" data-quantity="f_1,f_2[],f_3,f_4" /><!----></label>
+
+</div>
+</div>
+
+
+
+<div class="option">
+<div class="well">
+<h4>Your Info</h4>
+<p>Please enter your information here...</p>
+<!--<fieldset>-->
+
+<div class="sub-option o-5 o-text" data-type="text">
+<div class="well">
+<p><strong>Name: </strong></p>
+<p><input type="text" id="f_5" name="f_5" value=""/></p>
+</div>
+</div>
+
+
+<div class="sub-option o-6 o-text" data-type="text">
+<div class="well">
+<p><strong>Email: </strong></p>
+<p><input type="text" id="f_6" name="f_6" value=""/></p>
+</div>
+</div>
+
+<!--</fieldset>-->
+
+</div>
+</div>
+
+
+
+<div class="option">
+<div class="well">
+<h4>All Input Types</h4>
+<p>The description goes here...</p>
+<!--<fieldset>-->
+
+<div class="sub-option o-7 o-radio" data-type="radio">
+<div class="well">
+<p><strong>RB Group: </strong></p>
+<ul>
+<li>
+<input type="radio" data-cost="1" value="One" name="f_7"/>
+<label for="f_7"> One</label></li>
+<li>
+<input type="radio" data-cost="2" value="Two" name="f_7"/>
+<label for="f_7"> Two</label></li>
+<li>
+<input type="radio" data-cost="3" value="Three" name="f_7"/>
+<label for="f_7"> Three</label></li>
+</ul>
+
+</div>
+</div>
+
+
+<div class="sub-option o-8 o-checkbox" data-type="checkbox">
+<div class="well">
+<p><strong>CB Group: </strong></p>
+<ul>
+<li>
+<input type="checkbox" data-cost="4" value="Four" name="f_8[]"/>
+<label for="f_8[]"> Four</label></li>
+<li>
+<input type="checkbox" data-cost="5" value="Five" name="f_8[]"/>
+<label for="f_8[]"> Five</label></li>
+<li>
+<input type="checkbox" data-cost="6" value="Six" name="f_8[]"/>
+<label for="f_8[]"> Six</label></li>
+</ul>
+
+</div>
+</div>
+
+
+<div class="sub-option o-9 o-slider" data-type="slider">
+<div class="well">
+<p><strong>Slider: </strong></p>
+<input class="i-slider" type="number" id="f_9" name="f_9" data-slider="true" value="3" min="0" max="10" step="1" data-cost="2"/><span class="staticPrice"><span class="hypen"> - </span>$2 AUD per unit</span>
+</div>
+</div>
+
+
+<div class="sub-option o-10 o-spinner" data-type="spinner">
+<div class="well">
+<p><strong>Spinner: </strong></p>
+<input class="i-spinner" type="number" id="f_10" name="f_10" data-spinner="true" value="6" min="2" max="20" step="2" data-cost="4"/><span class="staticPrice"><span class="hypen"> - </span>$4 AUD per unit</span>
+</div>
+</div>
+
+
+<div class="sub-option o-11 o-select" data-type="select">
+<div class="well">
+<p><strong>Drop Down: </strong></p>
+<p><select name="f_11" id="f_11">
+<option value="Six" data-cost="6">Six</option>
+<option value="Five" data-cost="5">Five</option>
+<option value="Four" data-cost="4">Four</option>
+</select></p>
+</div>
+</div>
+
+
+<div class="sub-option o-12 o-mselect" data-type="mselect">
+<div class="well">
+<p><strong>Multi Select: </strong></p>
+<p><select name="f_12[]" id="f_12[]" multiple="multiple">
+<option value="Three" data-cost="3">Three</option>
+<option value="Two" data-cost="2">Two</option>
+<option value="One" data-cost="1">One</option>
+</select></p>
+</div>
+</div>
+
+
+<div class="sub-option o-13 o-text" data-type="text">
+<div class="well">
+<p><strong>Single Line Text: </strong></p>
+<p><input type="text" id="f_13" name="f_13" value="Single Line Text"/></p>
+</div>
+</div>
+
+
+<div class="sub-option o-14 o-textarea" data-type="textarea">
+<div class="well">
+<p><strong>Multi Line Text: </strong></p>
+<textarea name="f_14" id="f_14">Multi Line Text
+Multi Line Text&lt;br&gt;
+Multi Line Text</textarea>
+</div>
+</div>
+
+<!--</fieldset>-->
+
+</div>
+</div>
+
+<p><input class="submit btn btn-primary btn-large" type="submit" value="Send it Off!"></p>
+</form>
+
+<p style="border-top: 1px solid #000;">Here is the bottom of the form. If you scroll below this point, you should see the summary sidebar stop moving with the page when it reaches the bottom of the form.
+<div style="height: 700px;"></div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery-price-calculator-pro.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+<script type="text/javascript" src="lib/ui-spinner/ui.spinner.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    	var form = $('#jquery-order-form');
+
+form.find('span.staticPrice').remove();
+
+form.on('submit', function(event){
+    event.preventDefault();
+    var modal = $('<div class="modal hide fade" id="add-options-modal"><div class="modal-header"><a class="close" data-dismiss="modal">&times;</a>            <h2>Oops! Form Submission Disabled</h2></div><div class="modal-body"><p>jQuery Price Calculator Pro is designed to be added on top of an existing order form, and it does not include form submission functionality. If you require submit via email functionality, it is worth looking at <a href="http://codecanyon.net/item/jquery-order-form-builder/485086">jQuery Order Form Builder</a>, which creates fully functional orders forms, and includes jQuery Price Calculator Pro.</p></div><div class="modal-footer">            <a href="#" data-dismiss="modal" class="btn btn-primary add">Okay</a></div></div>');
+    modal.appendTo("body");
+    modal.modal();
+});
+
+	form.jPrice({
+	    "floatSub": true,
+	    "showPricesOption": true,
+	    "itemize": true,
+	    "showZeroAs": "false",
+	    "subAlign": "right",
+	    "decimalSep": ".",
+	    "pricesFadeTime": "",
+	    "emptySummaryText": "<p>Please configure your order...<\/p>",
+	    "showPrices": true,
+	    "signBefore": "$",
+	    "signAfter": " AUD",
+	    "items": {
+	        "f_1": "Radio Buttons",
+	        "f_2[]": "Checkboxes",
+	        "f_3": "Slider",
+	        "f_4": "File",
+	        "f_5": "Name",
+	        "f_6": "Email",
+	        "f_7": "RB Group",
+	        "f_8[]": "CB Group",
+	        "f_9": "Slider",
+	        "f_10": "Spinner",
+	        "f_11": "Drop Down",
+	        "f_12[]": "Multi Select",
+	        "f_13": "Single Line Text",
+	        "f_14": "Multi Line Text",
+	        "q_1": "Quantity"
+	    },
+	    "pricesOverPeriod": [{
+	        divider: 12,
+	        title: 'Over 12 Months',
+	        suffix: '/mth'
+	    },{
+	        divider: 52,
+	        title: 'Over 52 Weeks',
+	        suffix: '/wk'
+	    }]
+	});
+
+if(typeof $.fn.jStyle === 'function'){
+    form.jStyle();
+}
+});
+</script>
+</body>
+</html>

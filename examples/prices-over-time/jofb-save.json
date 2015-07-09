@@ -1,0 +1,98 @@
+{
+    "version": "1.2.3",
+    "cfg": {
+        "form": {
+            "formTitle": "jQuery Price Calculator Pro",
+            "formId": "jquery-order-form",
+            "adminName": "",
+            "adminEmail": "",
+            "fromEmail": "",
+            "sendCustomerEmail": true,
+            "returnUrl": "",
+            "autoRedirect": false,
+            "submitLabel": "Send it Off!",
+            "signBefore": "$",
+            "signAfter": " AUD",
+            "showPrices": true,
+            "jqueryPCP": true,
+            "dateFormat": "jS M Y, g:i a"
+        },
+        "pcp": {
+            "floatSub": true,
+            "showPricesOption": true,
+            "itemize": true,
+            "showZeroAs": "false",
+            "subAlign": "right",
+            "decimalSep": ".",
+            "pricesFadeTime": "",
+            "emptySummaryText": "<p>Please configure your order...</p>"
+        },
+        "templates": {
+            "adminEmailTemplate": "{{#subject}}Online Order Form{{/subject}}\n    \n    <p>Dear {{adminName}},\n<br/>An order has been submitted on the website: </p>\n    <br/>\n    <p>IP Address: {{ipAddress}}</p>\n    <p>Date: {{date}}</p>\n    <br/>\n    <h1>Online Order Form ({{formTitle}})</h1>\n    \n<h2>Items</h2>\n\n{{#options}}\n        \n        <div class=\"group\">\n        \n        <h4>{{title}}</h4>\n        <p>{{description}}</p>\n        <table border=\"1\">\n            <tr>\n                <th>Option</th>\n                <th>Value</th>\n                <th>Unit Price</th>\n                <th>Quantity</th>\n                <th>Price</th>\n            </tr>\n            {{#values}}\n                {{#data}}\n                <tr>\n                    <td>{{title}}</td>\n                    <td>{{value}}</td>\n                    <td>{{unitCostFormatted}}</td>\n                    <td>{{quantity}}</td>\n                    <td>{{costFormatted}}</td>\n                </tr>\n                {{/data}}\n            {{/values}}\n            {{#groupQuantity}}\n            <tr>\n                <td></td>\n                <td></td>\n                <td></td>\n                <td>Subtotal: </td>\n                <td>{{groupUnitCostFormatted}}</td>\n            </tr>\n            <tr>\n                <td></td>\n                <td></td>\n                <td></td>\n                <td>Quantity: </td>\n                <td>{{groupQuantity}}</td>\n            </tr>\n            {{/groupQuantity}}\n            {{#groupCost}}\n            <tr>\n                <td></td>\n                <td></td>\n                <td></td>\n                <td>Total: </td>\n                <td>{{groupCostFormatted}}</td>\n            </tr>\n            {{/groupCost}}\n        </table>\n        </div>\n        \n        <hr/>\n        \n        {{/options}}\n        \n        <h2>Grand Total: {{totalCostFormatted}}</h2>",
+            "customerEmailTemplate": "{{#subject}}Online Order Form{{/subject}}\n    \n    <p>Dear {{sp_name}},\n<br/>Thank you for the recent order that you placed on our website! The details are as follows: </p>\n    <br/>\n    <p>Date: {{date}}</p>\n    <br/>\n    <h1>Online Order Form ({{formTitle}})</h1>\n    \n<h2>Items</h2>\n\n{{#options}}\n        \n        <div class=\"group\">\n        \n        <h4>{{title}}</h4>\n        <p>{{description}}</p>\n        <table border=\"1\">\n            <tr>\n                <th>Option</th>\n                <th>Value</th>\n                <th>Unit Price</th>\n                <th>Quantity</th>\n                <th>Price</th>\n            </tr>\n            {{#values}}\n                {{#data}}\n                <tr>\n                    <td>{{title}}</td>\n                    <td>{{value}}</td>\n                    <td>{{unitCostFormatted}}</td>\n                    <td>{{quantity}}</td>\n                    <td>{{costFormatted}}</td>\n                </tr>\n                {{/data}}\n            {{/values}}\n            {{#groupQuantity}}\n            <tr>\n                <td></td>\n                <td></td>\n                <td></td>\n                <td>Subtotal: </td>\n                <td>{{groupUnitCostFormatted}}</td>\n            </tr>\n            <tr>\n                <td></td>\n                <td></td>\n                <td></td>\n                <td>Quantity: </td>\n                <td>{{groupQuantity}}</td>\n            </tr>\n            {{/groupQuantity}}\n            {{#groupCost}}\n            <tr>\n                <td></td>\n                <td></td>\n                <td></td>\n                <td>Total: </td>\n                <td>{{groupCostFormatted}}</td>\n            </tr>\n            {{/groupCost}}\n        </table>\n        </div>\n        \n        <hr/>\n        \n        {{/options}}\n        \n        <h2>Grand Total: {{totalCostFormatted}}</h2>"
+        }
+    },
+    "options": [{
+        "title": "Group",
+        "description": "Some sort of description could go here, just not lorem ipsum.",
+        "type": "generic",
+        "values": [{
+            "title": "Option #1",
+            "type": "radio",
+            "values": [{
+                "label": "One",
+                "cost": "1"
+            }, {
+                "label": "Two",
+                "cost": "2"
+            }, {
+                "label": "Three",
+                "cost": "3",
+                "checked": "true"
+            }, {
+                "label": "Four",
+                "cost": "4"
+            }, {
+                "label": "Five",
+                "cost": "5"
+            }]
+        }, {
+            "title": "Option #2",
+            "type": "checkbox",
+            "values": [{
+                "label": "One",
+                "cost": "1"
+            }, {
+                "label": "Two",
+                "cost": "2",
+                "checked": "true"
+            }, {
+                "label": "Three",
+                "cost": "3"
+            }, {
+                "label": "Four",
+                "cost": "4",
+                "checked": "true"
+            }, {
+                "label": "Five",
+                "cost": "5",
+                "checked": "true"
+            }]
+        }, {
+            "title": "Option #3",
+            "type": "checkbox",
+            "values": [{
+                "label": "One",
+                "cost": "1"
+            }, {
+                "label": "Two",
+                "cost": "2",
+                "checked": "true"
+            }, {
+                "label": "Three",
+                "cost": "3",
+                "checked": "true"
+            }]
+        }]
+    }]
+}

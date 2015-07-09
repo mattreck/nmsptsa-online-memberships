@@ -1,0 +1,66 @@
+#main {
+  max-width: 980px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 30px;
+  display: block;
+}
+form {
+  overflow: hidden;
+}
+form.right .sidebar {
+  margin-left: 20px;
+}
+form.right .options, form.right .sidebar {
+  float: left;
+}
+form.left .options, form.left .sidebar {
+  margin-right: 20px;
+}
+form.left .options, form.left .sidebar {
+  float: right;
+}
+.option {
+  background-color: #eee;
+}
+.sidebar {
+  width: 240px;
+  color: #fff;
+}
+.sidebar h4 {
+  margin-bottom: 10px;
+}
+.sidebar > div {
+  background-color: #363839;
+  margin-bottom: 20px;
+}
+.sidebar .total {
+  background-color: #020967;
+  color: #fff;
+  font-weight:700;
+}
+.sidebar .total span {
+  color: #fff;
+}
+.sidebar h3 {
+  font-size: 1.6em;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+.sidebar h3:last-child {
+  margin-bottom: 0;
+}
+.sidebar.fixed {
+  position: fixed !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.sidebar.bottom {
+  position: relative !important;
+}
+.sidebar > div:last-child {
+  margin-bottom: 0;
+}
+.price-tag-wrapper .price-tag {
+  color: #bc392f;
+}

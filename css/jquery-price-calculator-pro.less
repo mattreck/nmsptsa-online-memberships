@@ -1,0 +1,74 @@
+#main {
+    max-width: 980px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px;
+    display: block;
+}
+
+form {
+    &.right {
+        .sidebar {
+            margin-left: 20px;
+        }
+        .options, .sidebar {
+            float: left;
+        }
+    }
+    &.left {
+        .options, .sidebar {
+            margin-right: 20px;
+        }
+        .options, .sidebar {
+            float: right;
+        }
+    }
+    overflow: hidden;
+}
+
+.option {
+    background-color: #eee;
+}
+
+.sidebar {
+    width: 240px;
+    h4 {
+        margin-bottom: 10px;
+    }
+    color:#333;
+    &>div{
+        background-color: #FCFFE5;
+        margin-bottom: 20px;
+    }
+    .total {
+        background-color: #D6E5FF;
+        span {
+            color: #005DFF;
+        }
+    }
+    h3 {
+        font-size: 1.6em;
+        font-weight: normal;
+        margin-bottom: 10px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &.fixed {
+        position: fixed !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    &.bottom {
+        position: relative !important;
+    }
+    &>div:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.price-tag-wrapper {
+    .price-tag {
+        color: #bc392f;
+    }
+}

@@ -1,0 +1,163 @@
+
+<!doctype html>
+<!--[if lt IE 7]> <html lang="en-us" class="no-js ie6"> <![endif]-->
+<!--[if IE 7]>    <html lang="en-us" class="no-js ie7"> <![endif]-->
+<!--[if IE 8]>    <html lang="en-us" class="no-js ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-us" class="no-js"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Prices Over Time :: jQuery Price Calculator Pro</title>
+<link rel="stylesheet" type="text/css" href="../../lib/bootstrap/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="../../css/example.css"/>
+<link rel="stylesheet" type="text/css" href="../../css/jquery-price-calculator-pro.css"/>
+<link rel="stylesheet" type="text/css" href="../../css/jquery-order-form.css"/>
+<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css"/>
+
+<body>
+
+<div id="main">
+<h1>jQuery Price Calculator Pro Examples</h1>
+<div class="subnav">
+    <ul class="nav nav-pills">
+        <li class=""><a href="../all-inputs/">All Inputs (comprehensive demo)</a></li>
+        <li class="active"><a href="../prices-over-time/">Prices Over Time</a></li>
+        <li class=""><a href="../quantities/">Quantities</a></li>
+    </ul>
+</div>
+
+<p class="lead">This example shows how you can split the price up over a certain time period. Everything is customizable, and you can split it up as many times or as few as you want (or even not at all!).</p>
+
+<h2>Prices Over Time</h2>
+<form id="jquery-order-form" class="jof form-horizontal" action="submit.php" method="post" enctype="multipart/form-data">
+
+<div class="option">
+<div class="well">
+<h4>Group</h4>
+<p>Some sort of description could go here, just not lorem ipsum.</p>
+<!--<fieldset>-->
+
+<div class="sub-option o-1 o-radio" data-type="radio">
+<div class="well">
+<p><strong>Option #1: </strong></p>
+<ul>
+<li>
+<input type="radio"  data-cost="1" value="One" name="f_1"/>
+<label for="f_1"> One</label></li>
+<li>
+<input type="radio"  data-cost="2" value="Two" name="f_1"/>
+<label for="f_1"> Two</label></li>
+<li>
+<input type="radio" checked="checked" data-cost="3" value="Three" name="f_1"/>
+<label for="f_1"> Three</label></li>
+<li>
+<input type="radio"  data-cost="4" value="Four" name="f_1"/>
+<label for="f_1"> Four</label></li>
+<li>
+<input type="radio"  data-cost="5" value="Five" name="f_1"/>
+<label for="f_1"> Five</label></li>
+</ul>
+
+</div>
+</div>
+
+
+<div class="sub-option o-2 o-checkbox" data-type="checkbox">
+<div class="well">
+<p><strong>Option #2: </strong></p>
+<ul>
+<li>
+<input type="checkbox"  data-cost="1" value="One" name="f_2[]"/>
+<label for="f_2[]"> One</label></li>
+<li>
+<input type="checkbox" checked="checked" data-cost="2" value="Two" name="f_2[]"/>
+<label for="f_2[]"> Two</label></li>
+<li>
+<input type="checkbox"  data-cost="3" value="Three" name="f_2[]"/>
+<label for="f_2[]"> Three</label></li>
+<li>
+<input type="checkbox" checked="checked" data-cost="4" value="Four" name="f_2[]"/>
+<label for="f_2[]"> Four</label></li>
+<li>
+<input type="checkbox" checked="checked" data-cost="5" value="Five" name="f_2[]"/>
+<label for="f_2[]"> Five</label></li>
+</ul>
+
+</div>
+</div>
+
+
+<div class="sub-option o-3 o-checkbox" data-type="checkbox">
+<div class="well">
+<p><strong>Option #3: </strong></p>
+<ul>
+<li>
+<input type="checkbox"  data-cost="1" value="One" name="f_3[]"/>
+<label for="f_3[]"> One</label></li>
+<li>
+<input type="checkbox" checked="checked" data-cost="2" value="Two" name="f_3[]"/>
+<label for="f_3[]"> Two</label></li>
+<li>
+<input type="checkbox" checked="checked" data-cost="3" value="Three" name="f_3[]"/>
+<label for="f_3[]"> Three</label></li>
+</ul>
+
+</div>
+</div>
+
+<!--</fieldset>-->
+
+</div>
+</div>
+
+<p><input class="submit btn btn-primary btn-large" type="submit" value="Send it Off!"></p>
+</form>
+
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../../lib/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-price-calculator-pro.js"></script>
+<script type="text/javascript">
+$(function(){
+    var form = $('#jquery-order-form');
+    
+	form.jPrice({
+	    "floatSub": true,
+	    "showPricesOption": true,
+	    "itemize": true,
+	    "showZeroAs": "false",
+	    "subAlign": "right",
+	    "decimalSep": ".",
+	    "pricesFadeTime": "",
+	    "emptySummaryText": "<p>Please configure your order...<\/p>",
+	    "showPrices": true,
+	    "signBefore": "$",
+	    "signAfter": " AUD",
+	    "items": {
+	        "f_1": "Option #1",
+	        "f_2[]": "Option #2",
+	        "f_3[]": "Option #3"
+	    },
+	    "pricesOverPeriod": [{
+	        divider: 12,
+	        title: 'Over 12 Months',
+	        suffix: '/mth'
+	    }, {
+	        divider: 52,
+	        title: 'Over 52 Weeks',
+	        suffix: '/wk'
+	    }]
+	});
+
+    /* disable form submission */
+    form.on('submit', function(event){
+        event.preventDefault();
+        var modal = $('<div class="modal hide fade" id="add-options-modal"><div class="modal-header"><a class="close" data-dismiss="modal">&times;</a>            <h2>Oops! Form Submission Disabled</h2></div><div class="modal-body"><p>jQuery Price Calculator Pro is designed to be added on top of an existing order form, and it does not include form submission functionality. If you require submit via email functionality, it is worth looking at <a href="http://codecanyon.net/item/jquery-order-form-builder/485086?ref=BenMartinStudios">jQuery Order Form Builder</a>, which creates fully functional orders forms, and includes jQuery Price Calculator Pro.</p></div><div class="modal-footer">            <a href="#" data-dismiss="modal" class="btn btn-primary add">Okay</a></div></div>');
+        modal.appendTo("body");
+        modal.modal();
+    });
+});
+</script>
+</body>
+</html>

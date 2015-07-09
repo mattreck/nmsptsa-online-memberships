@@ -1,0 +1,202 @@
+
+<!doctype html>
+<!--[if lt IE 7]> <html lang="en-us" class="no-js ie6"> <![endif]-->
+<!--[if IE 7]>    <html lang="en-us" class="no-js ie7"> <![endif]-->
+<!--[if IE 8]>    <html lang="en-us" class="no-js ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-us" class="no-js"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>All Inputs :: jQuery Price Calculator Pro</title>
+<link rel="stylesheet" type="text/css" href="../../lib/bootstrap/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="../../css/example.css"/>
+<link rel="stylesheet" type="text/css" href="../../css/jquery-price-calculator-pro.css"/>
+<link rel="stylesheet" type="text/css" href="../../css/jquery-order-form.css"/>
+<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css"/>
+<link rel="stylesheet" type="text/css" href="../../lib/ui-spinner/ui.spinner.css"/>
+
+<body>
+
+<div id="main">
+
+<h1>jQuery Price Calculator Pro Examples</h1>
+<div class="subnav">
+    <ul class="nav nav-pills">
+        <li class="active"><a href="../all-inputs/">All Inputs (comprehensive demo)</a></li>
+        <li class=""><a href="../prices-over-time/">Prices Over Time</a></li>
+        <li class=""><a href="../quantities/">Quantities</a></li>
+    </ul>
+</div>
+
+<p class="lead">This example shows a comprehensive overview of all the input types that jQuery Price Calculator Pro supports. You can also see an example of how the itemized summary looks (scroll to the bottom of the page to see it float in the window).</p>
+
+<h2>All Inputs</h2>
+<form id="jquery-order-form" class="jof form-horizontal" action="submit.php" method="post" enctype="multipart/form-data">
+
+<div class="option">
+<div class="well">
+<h4>All Inputs</h4>
+<p>Here follows all of the html form inputs that jQuery Price Calculator Pro Supports...</p>
+<!--<fieldset>-->
+
+<div class="sub-option o-1 o-radio" data-type="radio">
+<div class="well">
+<p><strong>Radio Button Group: </strong></p>
+<ul>
+<li>
+<input type="radio"  data-cost="1" value="One" name="f_1"/>
+<label for="f_1"> One</label></li>
+<li>
+<input type="radio" checked="checked" data-cost="2" value="Two" name="f_1"/>
+<label for="f_1"> Two</label></li>
+<li>
+<input type="radio"  data-cost="3" value="Three" name="f_1"/>
+<label for="f_1"> Three</label></li>
+</ul>
+
+</div>
+</div>
+
+
+<div class="sub-option o-2 o-checkbox" data-type="checkbox">
+<div class="well">
+<p><strong>Checkbox Group: </strong></p>
+<ul>
+<li>
+<input type="checkbox" checked="checked" data-cost="1.5" value="One and a Half" name="f_2[]"/>
+<label for="f_2[]"> One and a Half</label></li>
+<li>
+<input type="checkbox"  data-cost="2.5" value="Two and a Half" name="f_2[]"/>
+<label for="f_2[]"> Two and a Half</label></li>
+<li>
+<input type="checkbox" checked="checked" data-cost="3.5" value="Three and a Half" name="f_2[]"/>
+<label for="f_2[]"> Three and a Half</label></li>
+</ul>
+
+</div>
+</div>
+
+
+<div class="sub-option o-3 o-slider" data-type="slider">
+<div class="well">
+<p><strong>Slider: </strong></p>
+<input class="i-slider" type="number" id="f_3" name="f_3" data-slider="true" value="2" min="0" max="20" step="2" data-cost="3"/><span class="staticPrice"><span class="hypen"> - </span>$3 AUD per unit</span>
+</div>
+</div>
+
+
+<div class="sub-option o-4 o-spinner" data-type="spinner">
+<div class="well">
+<p><strong>Spinner: </strong></p>
+<input class="i-spinner" type="number" id="f_4" name="f_4" data-spinner="true" value="1" min="0" max="10" step="1" data-cost="3"/><span class="staticPrice"><span class="hypen"> - </span>$3 AUD per unit</span>
+</div>
+</div>
+
+
+<div class="sub-option o-5 o-select" data-type="select">
+<div class="well">
+<p><strong>Drop Down List: </strong></p>
+<p><select name="f_5" id="f_5" >
+<option value="Three" data-cost="3" >Three</option>
+<option value="Four" data-cost="4" >Four</option>
+<option value="Five" data-cost="5" >Five</option>
+</select></p>
+</div>
+</div>
+
+
+<div class="sub-option o-6 o-mselect" data-type="mselect">
+<div class="well">
+<p><strong>MultiSelect: </strong></p>
+<p><select name="f_6[]" id="f_6[]" multiple="multiple">
+<option value="Four" data-cost="4" selected="selected">Four</option>
+<option value="Six" data-cost="6" >Six</option>
+<option value="Eight" data-cost="8" selected="selected">Eight</option>
+</select></p>
+</div>
+</div>
+
+
+<div class="sub-option o-7 o-text" data-type="text">
+<div class="well">
+<p><strong>Single Line Text: </strong></p>
+<p><input type="text" id="f_7" name="f_7" value="jQuery Price Calculator Pro will include single line text inputs in the itemized summary."/></p>
+</div>
+</div>
+
+
+<div class="sub-option o-8 o-textarea" data-type="textarea">
+<div class="well">
+<p><strong>Multiline Text: </strong></p>
+<textarea name="f_8" id="f_8">jQuery Price Calculator Pro will ignore multiline text inputs (textareas) when generating the summary.</textarea>
+</div>
+</div>
+
+
+<div class="sub-option o-9 o-file" data-type="file">
+<div class="well">
+<p><strong>File: </strong></p>
+<input name="f_9" id="f_9" type="file" />
+</div>
+</div>
+
+<!--</fieldset>-->
+<label><strong>Quantity: </strong><input type="number" name="q_1" id="q_1" value="1" data-quantity="f_1,f_2[],f_3,f_4,f_5,f_6[],f_7,f_8,f_9" /></label>
+
+</div>
+</div>
+
+<p><input class="submit btn btn-primary btn-large" type="submit" value="Send it Off!"></p>
+</form>
+
+<p style="border-top: 1px solid #000;">Here is the bottom of the form. If you scroll below this point, you should see the summary sidebar stop moving with the page when it reaches the bottom of the form.
+<div style="height: 700px;"></div>
+
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../../lib/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../lib/ui-spinner/ui.spinner.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-price-calculator-pro.js"></script>
+<script type="text/javascript">
+$(function(){
+   	var form = $('#jquery-order-form');
+
+	form.jPrice({
+	    "floatSub": true,
+	    "showPricesOption": true,
+	    "itemize": true,
+	    "showZeroAs": "false",
+	    "subAlign": "right",
+	    "decimalSep": ".",
+	    "pricesFadeTime": "",
+	    "emptySummaryText": "<p>Please configure your order...<\/p>",
+	    "showPrices": true,
+	    "signBefore": "$",
+	    "signAfter": " AUD",
+	    "items": {
+	        "f_1": "Radio Button Group",
+	        "f_2[]": "Checkbox Group",
+	        "f_3": "Slider",
+	        "f_4": "Spinner",
+	        "f_5": "Drop Down List",
+	        "f_6[]": "MultiSelect",
+	        "f_7": "Single Line Text",
+	        "f_8": "Multiline Text",
+	        "f_9": "File",
+	        "q_1": "Quantity"
+	    }
+	}
+	);
+
+    /* disable form submission */
+    form.on('submit', function(event){
+        event.preventDefault();
+        var modal = $('<div class="modal hide fade" id="add-options-modal"><div class="modal-header"><a class="close" data-dismiss="modal">&times;</a>            <h2>Oops! Form Submission Disabled</h2></div><div class="modal-body"><p>jQuery Price Calculator Pro is designed to be added on top of an existing order form, and it does not include form submission functionality. If you require submit via email functionality, it is worth looking at <a href="http://codecanyon.net/item/jquery-order-form-builder/485086?ref=BenMartinStudios">jQuery Order Form Builder</a>, which creates fully functional orders forms, and includes jQuery Price Calculator Pro.</p></div><div class="modal-footer">            <a href="#" data-dismiss="modal" class="btn btn-primary add">Okay</a></div></div>');
+        modal.appendTo("body");
+        modal.modal();
+    });
+});
+</script>
+</body>
+</html>

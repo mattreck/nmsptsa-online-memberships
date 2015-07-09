@@ -1,0 +1,447 @@
+<!doctype html>
+<!--[if lt IE 7]> <html lang="en-us" class="no-js ie6"> <![endif]-->
+<!--[if IE 7]>    <html lang="en-us" class="no-js ie7"> <![endif]-->
+<!--[if IE 8]>    <html lang="en-us" class="no-js ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-us" class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>Membership v2</title>
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/jquery-price-calculator-pro.css"/>
+	<link rel="stylesheet" type="text/css" href="css/jquery-order-form.css"/>
+	<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/themes/ui-lightness/jquery-ui.css"/>
+	<link rel="stylesheet" type="text/css" href="lib/ui-spinner/ui.spinner.css"/>
+	<script type="text/javascript" src="http://jaymorrow.github.io/validatr/assets/js/validatr.min.js"></script>
+	<script>
+		jQuery(function ($) {
+		    $('form').validatr(); 
+		});
+	</script>
+	<style type="text/css">.error {color: red !important;}</style>
+</head>
+<body>
+	<div id="main">
+		<h1>2015-2016 NMS PTSA Membership</h1>
+		<form id="jquery-order-form" class="jof form-horizontal" action="engine/data.php" method="post">
+		<div id="errorMessageDiv" class="alert alert-danger" style="display:none;">You forgot to fill out some information. Please be sure you did the following: 1) selected a membership package, 2) filled in your address, city, zip code, email, and phone number.</div>
+			<!--Membership Packages-->
+			<div class="sub-option o-1 o-radio" data-type="radio">
+				<div class="well">
+					<p><u><strong>Membership Package:</strong></u></p>
+					<div class="radio">
+						<label>
+							<input type="radio" data-cost="750" value="Platinum" name="f_1">
+							<strong>Platinum</strong> - 5 memberships, recognition in directory, bag, yearbook, magnet, free admission to PTSA sponsored events and directory
+						</label>
+					</div>
+					<br>
+					<div class="radio">
+						<label>
+							<input type="radio" data-cost="450" value="Gold" name="f_1">
+							<strong>Gold</strong> - 4 memberships, recognition in directory, bag, yearbook, magnet and directory
+						</label>
+					</div>
+					<br>
+					<div class="radio">
+						<label>
+							<input type="radio" data-cost="200" value="Silver" name="f_1">
+							<strong>Silver</strong> - 3 memberships, bag, magnet and directory
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" data-cost="100" value="Bronze" name="f_1">
+							<strong>Bronze</strong> - 2 memberships, magnet and directory 
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" data-cost="50" value="Wildcat" name="f_1">
+							<strong>Wildcat</strong> - 1 membership and directory
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" data-cost="10" value="Basic PTSA Membership" name="f_1">
+							<strong>Basic PTSA Membership</strong> - 1 membership ONLY
+						</label>
+					</div>
+				</div>
+			</div>
+			<!--END Membership Packages-->
+
+			<!--Additional Directories-->
+			<div class="sub-option o-2 o-checkbox" data-type="checkbox">
+				<div class="well">
+					<p><u><strong>WANT ADDITIONAL DIRECTORIES? </strong></u></p>
+					<div class="row">
+						<div class="col-md-6">
+							Want to purchase a directory? <br> Each directory is $12.
+						</div>
+						<div class="col-md-6">
+							If so, how many?  	
+							<select class="form-control" name="f_10" id="f_10">
+								<option value="" data-cost="">Select an amount</option>
+								<option value="None (unless included)" data-cost="0">0</option>
+								<option value="1 directory" data-cost="12">1</option>
+								<option value="2 directories" data-cost="24">2</option>
+								<option value="3 directories" data-cost="36">3</option>
+								<option value="4 directories" data-cost="48">4</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--END Additional Directories-->
+
+			<!--Additional Bags-->
+			<div class="sub-option o-3 o-checkbox" data-type="select">
+				<div class="well">
+					<p><u><strong>PLATINUM AND GOLD MEMBERS ONLY - Additional bag purchase: </strong></u></p>
+					<div class="row">
+						<div class="col-md-6">
+							Want to purchase additional bags? <br> Each bag is $15.
+						</div>
+						<div class="col-md-6">
+							If so, how many?  	
+							<select class="form-control" name="f_11" id="f_11">
+								<option value="" data-cost="">Select an amount</option>
+								<option value="No additional bags" data-cost="0">0</option>
+								<option value="1 additional bag" data-cost="15">1</option>
+								<option value="2 additional bags" data-cost="30">2</option>
+								<option value="3 additional bags" data-cost="45">3</option>
+								<option value="4 additional bags" data-cost="60">4</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--END Additional Bags-->
+
+			<!--Supply Fund Donation-->
+			<div class="sub-option o-4 o-checkbox" data-type="number">
+				<div class="well">
+					<p><u><strong>PTSA SUPPLY FUND DONATION: </strong></u></p>
+					<div class="row">
+						<div class="col-md-6">
+							Want to donate to the teacher supply fund?  <br> This enables us to replenish teacher supplies throughout the year.
+						</div>
+						<div class="col-md-6">
+							If so, how much? 
+							<input class="form-control" type="number" id="f_9" name="f_9" data-spinner="true" value="0.00" min="0.00" max="1000" step="1.00" data-cost="1.00"/>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--END Supply Fund Donation-->
+
+	<!--Academic Enrichment Donation-->
+	<div class="sub-option o-5 o-checkbox" data-type="number">
+		<div class="well">
+			<p><u><strong>PTSA ACADEMIC ENRICHMENT: </strong></u></p>
+			<div class="row">
+				<div class="col-md-6">
+					Want to donate to Academic Enrichment?  <br> This enables us to provide Teacher mini grants and academic enrichment programs throughout the year.
+				</div>
+				<div class="col-md-6">
+					If so, how much? 
+					<input class="form-control" type="number" id="currency" name="f_8" value="0.00" min="0.00" max="1000" data-cost="1.00"/>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--END Academic Enrichment Donation-->
+
+	<!--PTSA MEMBER INFO-->
+	<div class="sub-option o-5 o-checkbox" data-type="number">
+		<div class="well">
+			<p><u><strong>MEMBERS JOINING THE NMS PTSA FOR THE 2015-2016 SCHOOL YEAR: </strong></u></p>
+			<div class="row">
+				<div class="col-md-3">
+					Name:
+					<input type="text" class="form-control" id="name1" name="name1" placeholder="Elmo">
+				</div>
+				<div class="col-md-3">
+					Role:
+					<select class="form-control" name="role1">
+						<option></option>
+						<option>Parent</option>
+						<option>Teacher</option>
+						<option>Student</option>
+						<option>Other</option>
+					</select>
+				</div>
+				<div class="col-md-3">
+					Grade:
+					<select class="form-control" name="grade1">
+						<option></option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+					</select>
+				</div>
+				<div class="col-md-3">
+					Pride Teacher: 
+					<input type="text" class="form-control" placeholder="Mr. Pride" name="teacher1">
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-3">
+					Name:
+					<input type="text" class="form-control" name="name2" placeholder="Cookie Monster">
+				</div>
+				<div class="col-md-3">
+					Role:
+					<select class="form-control" name="role2">
+						<option value=""></option>
+						<option>Parent</option>
+						<option>Teacher</option>
+						<option>Student</option>
+						<option>Other</option>
+					</select>
+				</div>
+				<div class="col-md-3">
+					Grade:
+					<select class="form-control" name="grade2">
+						<option></option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+					</select>
+				</div>
+				<div class="col-md-3">
+					Pride Teacher: 
+					<input type="text" class="form-control" placeholder="Mr. Pride" name="teacher2">
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-3">
+					Name:
+					<input type="text" class="form-control" name="name3" placeholder="Big Bird">
+				</div>
+				<div class="col-md-3">
+					Role:
+					<select class="form-control" name="role3">
+						<option></option>
+						<option>Parent</option>
+						<option>Teacher</option>
+						<option>Student</option>
+						<option>Other</option>
+					</select>
+				</div>
+				<div class="col-md-3">
+					Grade:
+					<select class="form-control" name="grade3">
+						<option></option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+					</select>
+				</div>
+				<div class="col-md-3">
+					Pride Teacher: 
+					<input type="text" class="form-control" placeholder="Mr. Pride" name="teacher3">
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-3">
+					Name:
+					<input type="text" class="form-control" name="name4" placeholder="Bert">
+				</div>
+				<div class="col-md-3">
+					Role:
+					<select class="form-control" name="role4">
+						<option></option>
+						<option>Parent</option>
+						<option>Teacher</option>
+						<option>Student</option>
+						<option>Other</option>
+					</select>
+				</div>
+				<div class="col-md-3">
+					Grade:
+					<select class="form-control" name="grade4">
+						<option></option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+					</select>
+				</div>
+				<div class="col-md-3">
+					Pride Teacher: 
+					<input type="text" class="form-control" placeholder="Mr. Pride" name="teacher4">
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-3">
+					Name:
+					<input type="text" class="form-control" name="name5" placeholder="Ernie">
+				</div>
+				<div class="col-md-3">
+					Role:
+					<select class="form-control" name="role5">
+						<option></option>
+						<option>Parent</option>
+						<option>Teacher</option>
+						<option>Student</option>
+						<option>Other</option>
+					</select>
+				</div>
+				<div class="col-md-3">
+					Grade:
+					<select class="form-control" name="grade5">
+						<option></option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+					</select>
+				</div>
+				<div class="col-md-3">
+					Pride Teacher: 
+					<input type="text" class="form-control" placeholder="Mr. Pride" name="teacher5">
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!--END PTSA MEMBER INFO-->
+
+	<!--Address and Contact Info-->
+	<div class="sub-option o-5 o-checkbox" data-type="radio">
+		<div class="well">
+			<div class="row">
+				<div class="col-md-6 text-center">
+					<label for="exampleInputName2">ADDRESS:</label>
+					<input type="text" class="form-control" id="address" name="address" placeholder="123 Sesame Street">
+				</div>
+				<div class="col-md-6 text-center">
+					<label for="exampleInputName2">CITY:</label>
+					<input type="text" class="form-control" id="city" name="city" placeholder="Milton">
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-2 text-center">
+					<label for="exampleInputName2">ZIP CODE:</label>
+					<input type="text" class="form-control" id="zip" name="zip" placeholder="30004">
+				</div>
+				<div class="col-md-4 text-center">
+					<label for="exampleInputName2">PHONE #:</label>
+					<input type="text" class="form-control" id="phone" name="phone" placeholder="(123) 456-7890">
+				</div>
+				<div class="col-md-6 text-center">
+					<label for="exampleInputName2">EMAIL ADDRESS:</label>
+					<input type="text" class="form-control" id="email" name="email" placeholder="elmo@gmail.com">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--END Address and Contact Info-->
+
+	<!--Gift Matching-->
+	<div class="sub-option o-5 o-checkbox" data-type="radio">
+		<div class="well">
+			<p><u><strong>DOES YOUR COMPANY HAVE GIFT MATCHING? </strong></u></p>
+			<div class="row">
+				<div class="col-md-6 text-center">
+					<div class="radio">
+						<label>
+							<input type="radio" value="Yes" name="giftmatching">
+							<strong>Yes, we have gift matching.</strong>
+						</label>
+					</div>
+				</div>
+				<div class="col-md-6 text-center">
+					<div class="radio">
+						<label>
+							<input type="radio" value="No" name="giftmatching">
+							<strong>No, we do not have gift matching.</strong>
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--END Gift Matching-->
+	<div id="errorMessageDiv2" class="alert alert-danger" style="display:none;">You forgot to fill out some information. Please be sure you did the following: 1) selected a membership package, 2) filled in your address, city, zip code, email, and phone number, and 3) filled in at least 1 members information.</div>
+	<p><input class="submit btn btn-primary btn-large" type="submit" value="Submit Membership Application"></p>
+</form>
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery-price-calculator-pro.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+<script type="text/javascript" src="lib/ui-spinner/ui.spinner.min.js"></script>
+
+<script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+<script>
+$( "#jquery-order-form" ).validate({
+  rules: {
+  	name1: {
+      required: true
+    },
+    address: {
+      required: true
+    },
+    city: {
+      required: true
+    },
+    zip: {
+      required: true
+    },
+    phone: {
+      required: true
+    },
+    email: {
+      required: true
+    }
+  }
+});
+</script>
+
+<script type="text/javascript">
+	$(function(){
+		var form = $('#jquery-order-form');
+
+		form.find('span.staticPrice').remove();
+
+
+		form.jPrice({
+			"floatSub": true,
+			"showPricesOption": true,
+			"itemize": true,
+			"showZeroAs": "false",
+			"subAlign": "right",
+			"decimalSep": ".",
+			"pricesFadeTime": "",
+			"emptySummaryText": "<p>Welcome to the 2015-2015 PTSA Online Application. Order calculations will be shown here as you fill out the form.<\/p>",
+			"showPrices": true,
+			"signBefore": "$",
+			"signAfter": "",
+			"items": {
+				"f_1": "Membership",
+				"f_8": "Academic Enrichment",
+				"f_9": "Supply Fund Donation",
+				"f_10": "Additional Directories",
+				"f_11": "Additional Bags",
+				"q_1": "Directory Quantity",
+				"q_2": "Bag Quantity"
+			}
+		});
+
+		if(typeof $.fn.jStyle === 'function'){
+			form.jStyle();
+		}
+	});
+</script>
+
+<hr>
+<div class="footer">2015 NMS PTSA - coded and designed by Matthew Reck. Orders are securely processed over SSL to protect personal information. NMS PTSA is not responsible for possible credit card theft, we do not store credit card data, it is handled by Paypal. Furthermore, refunds will not be given after purchases are complete. If you have any issues please contact us. <br> <br> <b>Version 2 build 101 - running on <a href="http://nmsptsa.com">http://nmsptsa.com</a></b></div>
+</body>
+</html>
