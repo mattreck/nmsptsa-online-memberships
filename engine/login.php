@@ -1,8 +1,8 @@
 <?php //login.php
-$db_hostname = 'ptsamembership.db.11754160.hostedresource.com';
-$db_database = 'ptsamembership';
-$db_username = 'ptsamembership';
-$db_password = 'Lugnut97!';
+$db_hostname = 'localhost';
+$db_database = 'database';
+$db_username = 'root';
+$db_password = 'password';
 
 // Connect to server.
 $db_server = mysql_connect($db_hostname, $db_username, $db_password)

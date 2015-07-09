@@ -30,7 +30,7 @@
             <hr>
             <p>
             <?php
-                $con = mysql_connect("ptsamembership.db.11754160.hostedresource.com","ptsamembership","Lugnut97!");
+                $con = mysql_connect("localhost","root","password");
                 if (!$con) {
                   die('Connection Error: ' . mysql_error());
                 }
